@@ -37,7 +37,7 @@ void main()
 
 void input()
 {
-	reset(); // to reset old sets if any
+	reset(); 
 	int size, x;
 	printf("\nEnter size of first set (max 9) : ");
 	scanf("%d", &size);
