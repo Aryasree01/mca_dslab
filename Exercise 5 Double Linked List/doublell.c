@@ -81,13 +81,13 @@ void printMenu(){
 
 void insertBeg(int data){
 	struct node *newNode = (struct node*) malloc(sizeof(struct node));
-	if(head == NULL){ // list is empty
+	if(head == NULL){ 
 		newNode->data = data;
 		newNode->next = NULL;
 		newNode->prev = NULL;
 		head = newNode;
 		tail = newNode;
-	}else { // atleast one node exists
+	}else { 
 		newNode->data = data;
 		newNode->next = head;
 		newNode->prev = NULL;
@@ -97,13 +97,13 @@ void insertBeg(int data){
 
 void insertEnd(int data){
 	struct node *newNode = (struct node*) malloc(sizeof(struct node));
-	if(head == NULL){ // list is empty
+	if(head == NULL){ 
 		newNode->data = data;
 		newNode->next = NULL;
 		newNode->prev = NULL;
 		head = newNode;
 		tail = newNode;
-	}else { // atleast one node exists
+	}else { 
 		newNode->data = data;
 		newNode->next = NULL;
 		newNode->prev = tail;
@@ -117,7 +117,7 @@ void insertRandom(int data, int pos) {
 	temp = head;
 	
 	for(int i = 1; i < (pos - 1); i++){
-		// move temp untill temp reach just before deleting node
+		
 		temp = temp->next;
 	}
 	
@@ -127,7 +127,7 @@ void insertRandom(int data, int pos) {
 	}else if(temp->next == NULL){
 		insertEnd(data);
 	}
-	else { // atleast one node exists
+	else { 
 		newNode->data = data;
 		newNode->next = temp->next;
 		newNode->prev = temp;
@@ -172,14 +172,14 @@ void deleteEnd(){
 void deleteRandom(int pos){
 	struct node *temp = head;
 	for(int i = 1; i < pos; i++){
-		//move temp untill temp reaches the exact node we want to delete
+	
 		temp = temp->next;
 	}
 	if(head == NULL){
 		printf("\nNo node to delete.!");
 	}else if(pos == 1){	
 		deleteBeg();
-	}else if(temp->next == NULL){ // if temp is last node(tail)
+	}else if(temp->next == NULL){
 		deleteEnd();
 	}else{
 		temp->prev->next = temp->next;
